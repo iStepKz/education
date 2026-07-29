@@ -8,9 +8,26 @@ import { SectionHeader } from "./ui/SectionHeader";
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+  
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+  
+    const response = await fetch("https://formspree.io/f/xzdnwpjn", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+  
+    if (response.ok) {
+      setSubmitted(true);
+      form.reset();
+    } else {
+      alert("Не удалось отправить заявку. Попробуйте ещё раз.");
+    }
   }
 
   return (
