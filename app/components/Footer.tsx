@@ -54,8 +54,7 @@ export function Footer() {
               className="h-28 w-auto rounded-xl bg-white px-4 py-3 lg:h-32"
             />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-400">
-              Современное IT-образование для детей, студентов и взрослых. Делаем шаг к
-              технологическому будущему вместе.
+              Корпоративное и индивидуальное обучение искусственному интеллекту и вайб-кодингу.
             </p>
           </div>
 

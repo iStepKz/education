@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "iStep — Современное IT-образование",
+  title: "Курсы ИИ для бизнеса в Астане — iStep",
   description:
-    "Образовательный центр iStep: программирование, AI, data analytics, UI/UX, web development и карьерные коуч-сессии для IT-специалистов.",
+    "Обучение искусственному интеллекту, вайб-кодингу для сотрудников и руководителей. Корпоративные программы обучения в Астане и онлайн по Казахстану.",
 };
 
 export default function RootLayout({
