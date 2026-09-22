@@ -1,3 +1,4 @@
+import { AiScenarios } from "./components/AiScenarios";
 import { ContactForm } from "./components/ContactForm";
 import { Corporate, Team, WhyUs } from "./components/WhyUs";
 import { Directions } from "./components/Directions";
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <WhyUs />
         <Directions />
+        <AiScenarios />
         <Corporate />
         <Team />
         <ContactForm />

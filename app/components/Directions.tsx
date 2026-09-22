@@ -1,67 +1,97 @@
 import { Container } from "./ui/Container";
+import { SectionHeader } from "./ui/SectionHeader";
 
-const directions = [
+type ServicePrice = {
+  amount: string;
+  note: string;
+};
+
+type Service = {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  features: string[];
+  prices: ServicePrice[];
+  footnote?: string;
+  icon: string;
+  color: string;
+};
+
+const services: Service[] = [
   {
     number: "01",
-    title: "Искусственный интеллект",
+    title: "Обучение ИИ",
+    subtitle: "Корпоративный курс · 5 часов",
     description:
-      "Практическое применение AI для работы, анализа информации, автоматизации задач и повышения личной эффективности.",
+      "ИИ и вайб-кодинг для специалистов: инструменты, практика на задачах заказчика и прототипы рабочих решений.",
     features: [
-      "Работа с современными AI-инструментами",
-      "Анализ и обработка данных",
-      "Автоматизация рутинных задач",
-      "Создание контента и решений для работы",
+      "ChatGPT, Claude, Perplexity, NotebookLM, Gemini, Copilot, DeepL, Gamma",
+      "Codex и Claude Code для работы с файлами",
+      "Практика на согласованных кейсах заказчика",
+      "Вайб-кодинг: прототипы с Cursor AI (согласование с ИТ-службой)",
     ],
-    highlight: "Применяйте AI уже сегодня для реальных рабочих задач",
+    prices: [{ amount: "от 157 500 ₸", note: "за 1 сотрудника / курс 5 часов" }],
+    footnote: "Формат и расписание согласуем. Для практики — материалы, разрешённые заказчиком.",
     icon: "AI",
     color: "bg-brand-teal-light text-brand-teal",
   },
   {
     number: "02",
-    title: "Вайбкодинг для работы",
+    title: "Маркетинг и продвижение",
+    subtitle: "Развитие маркетологов и SMM",
     description:
-      "Создание приложений и рабочих решений с помощью AI без навыков программирования.",
+      "Видеоуроки на платформе YSoft, контент с ИИ и сайт с SEO — под задачи продвижения компании.",
     features: [
-      "Создание прототипов и мини-приложений",
-      "Автоматизация рабочих процессов",
-      "Работа с современными AI-платформами",
-      "Практика на реальных кейсах",
+      "Digital Marketing и бизнес-навыки на YSoft",
+      "Reels, видео и изображения: Heygen, ElevenLabs, SubMagic, Higgsfield.ai",
+      "Разработка сайта для продуктов и услуг",
+      "SEO-продвижение по согласованным направлениям",
     ],
-    highlight: "Создавайте решения быстро и без программирования",
-    icon: "</>",
+    prices: [
+      { amount: "от 49 000 ₸", note: "за сотрудника · доступ к видеоурокам YSoft (от 10 человек)" },
+      { amount: "от 99 000 ₸", note: "сайт с SEO-продвижением" },
+    ],
+    footnote:
+      "Состав уроков и срок доступа фиксируем в предложении. Лицензии ИИ-сервисов и домен — отдельно.",
+    icon: "MKT",
     color: "bg-brand-blue-light text-brand-blue",
   },
   {
     number: "03",
-    title: "Аналитика данных в Excel",
-    subtitle: "Продвинутый уровень",
+    title: "Платформа LMS",
+    subtitle: "Среда для обучения сотрудников",
     description:
-      "Мощные инструменты для анализа, обработки и визуализации данных для принятия эффективных решений.",
+      "Собственная LMS: веб и мобильные приложения, каталог курсов, эквайринг и защита контента.",
     features: [
-      "Power Query и Power Pivot",
-      "Финансовые модели и прогнозирование",
-      "KPI и управленческие дашборды",
-      "Практические кейсы и шаблоны",
+      "Веб-интерфейс и мобильные приложения iOS / Android",
+      "Неограниченный каталог курсов, рейтинги, прогресс",
+      "Эквайринг, рассрочка 0-0-12, интеграции с внешними сервисами",
+      "Защита данных, видео и контроль доступа",
     ],
-    highlight: "Больше данных — больше решений — лучше результат",
-    icon: "📊",
+    prices: [
+      { amount: "от 5 900 000 ₸", note: "бессрочная лицензия для одной организации" },
+      { amount: "от 14 900 000 ₸", note: "исключительные права и исходный код" },
+    ],
+    footnote:
+      "Для корпоративного использования чаще выбирают бессрочную лицензию. Детали настройки — в договоре.",
+    icon: "LMS",
     color: "bg-brand-blue-light text-brand-blue",
   },
 ];
 
 export function Directions() {
   return (
-    <section
-      id="courses"
-      className="scroll-mt-32 bg-slate-50/80 py-6 sm:py-8 lg:flex lg:min-h-[calc(100svh-8rem)] lg:items-center lg:py-8"
-    >
+    <section id="courses" className="scroll-mt-32 bg-slate-50/80 py-10 sm:py-12 lg:py-14">
       <Container>
-        <h2 className="mb-4 text-center text-2xl font-bold tracking-tight text-brand-navy sm:mb-5 sm:text-3xl lg:text-4xl">
-          Направления обучения
-        </h2>
+        <SectionHeader
+          title="Наши услуги"
+          description="Корпоративное обучение, маркетинг и собственная платформа LMS — комплексное предложение iStep для бизнеса."
+          className="!mb-8 lg:!mb-10"
+        />
 
-        <div className="grid gap-3 sm:gap-4 lg:grid-cols-3 lg:gap-5">
-          {directions.map((item) => (
+        <div className="grid gap-5 lg:grid-cols-3 lg:gap-6">
+          {services.map((item) => (
             <article
               key={item.title}
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-teal/5 lg:rounded-3xl lg:p-6"
@@ -70,7 +100,7 @@ export function Directions() {
 
               <div className="relative mb-3 flex items-start justify-between gap-3">
                 <div
-                  className={`inline-flex h-10 w-10 items-center justify-center rounded-xl text-xs font-bold ${item.color}`}
+                  className={`inline-flex h-10 min-w-10 items-center justify-center rounded-xl px-2 text-[10px] font-bold sm:text-xs ${item.color}`}
                 >
                   {item.icon}
                 </div>
@@ -78,16 +108,12 @@ export function Directions() {
               </div>
 
               <h3 className="relative text-base font-bold text-brand-navy lg:text-lg">{item.title}</h3>
-              {"subtitle" in item && item.subtitle && (
-                <p className="relative mt-0.5 text-xs font-medium text-brand-teal sm:text-sm">
-                  {item.subtitle}
-                </p>
-              )}
+              <p className="relative mt-0.5 text-xs font-medium text-brand-teal sm:text-sm">{item.subtitle}</p>
               <p className="relative mt-2 text-xs leading-relaxed text-brand-muted sm:text-sm">
                 {item.description}
               </p>
 
-              <ul className="relative mt-3 space-y-1">
+              <ul className="relative mt-3 flex-1 space-y-1.5">
                 {item.features.map((feature) => (
                   <li key={feature} className="flex gap-2 text-xs text-brand-muted sm:text-sm">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-teal" />
@@ -96,9 +122,20 @@ export function Directions() {
                 ))}
               </ul>
 
-              <p className="relative mt-3 border-t border-slate-100 pt-3 text-xs font-medium text-brand-navy sm:text-sm">
-                {item.highlight}
-              </p>
+              <div className="relative mt-4 space-y-2 border-t border-slate-100 pt-4">
+                {item.prices.map((price) => (
+                  <div key={price.note}>
+                    <p className="text-lg font-bold text-brand-navy">{price.amount}</p>
+                    <p className="text-xs text-brand-muted">{price.note}</p>
+                  </div>
+                ))}
+              </div>
+
+              {item.footnote && (
+                <p className="relative mt-3 text-[11px] leading-snug text-brand-muted/90 sm:text-xs">
+                  {item.footnote}
+                </p>
+              )}
             </article>
           ))}
         </div>

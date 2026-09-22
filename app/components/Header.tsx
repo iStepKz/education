@@ -9,7 +9,7 @@ import { Container } from "./ui/Container";
 const navLinks = [
   { label: "Главная", href: "#home" },
   { label: "О нас", href: "#about" },
-  { label: "Курсы", href: "#courses" },
+  { label: "Услуги", href: "#courses" },
   { label: "Корпоративное обучение", href: "#corporate" },
   { label: "Преподаватели и менторы", href: "#team" },
   { label: "Контакты", href: "#contact" },

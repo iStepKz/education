@@ -100,7 +100,7 @@ export function Hero() {
             </div>
 
             <h1 className="text-3xl font-bold leading-[1.15] tracking-tight text-brand-navy sm:text-4xl lg:text-[2.75rem] lg:leading-[1.12]">
-              Искусственный интеллект и вайб-кодинг для бизнеса в Астане и онлайн
+              Искусственный интеллект и вайб-кодинг
             </h1>
 
             <p className="mt-6 text-lg leading-relaxed text-brand-muted sm:text-xl">
@@ -110,7 +110,7 @@ export function Hero() {
 
             <div className="mt-10">
               <Button href="#courses" variant="outline">
-                Посмотреть курсы
+                Наши услуги
               </Button>
             </div>
           </div>

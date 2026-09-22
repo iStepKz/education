@@ -19,7 +19,7 @@ const reasons = [
   {
     title: "Актуальные технологии",
     description:
-      "Обучаем тому, что востребовано сегодня: AI, data science, vibe-coding и современный web.",
+      "ChatGPT, Claude, Copilot, Cursor AI и другие инструменты — под реальные задачи ваших подразделений.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden>
         <path
@@ -34,7 +34,7 @@ const reasons = [
   {
     title: "Гибкий формат",
     description:
-      "Очные, онлайн и гибридные занятия. Удобное расписание для школьников, студентов и взрослых.",
+      "Очно в Астане, онлайн и гибридно по Казахстану. Формат, расписание и объём согласуем с заказчиком.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden>
         <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -66,7 +66,7 @@ export function WhyUs() {
         <SectionHeader
           label="О нас"
           title="Почему выбирают iStep"
-          description="Мы объединяем качественное образование, живую практику и поддержку в одной экосистеме."
+          description="Практикующие IT-специалисты с опытом в корпоративном и государственном секторе. Обучение на согласованных кейсах заказчика."
         />
 
         <div className="grid gap-6 lg:grid-cols-4">
@@ -104,12 +104,13 @@ export function Corporate() {
                 Корпоративное обучение
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-slate-300">
-                Разрабатываем программы upskilling и reskilling для команд любого размера.
-                AI, data, project management и digital-трансформация — под задачи вашего бизнеса.
+                Три направления: корпоративное обучение ИИ и вайб-кодингу, маркетинг и продвижение
+                (доступ к урокам по созданию Reels, продвижение, сайт и SEO), собственная LMS для
+                обучения сотрудников.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              {["Кастомные программы", "Очно и онлайн", "Отчётность для АУР", "Пилотный модуль"].map(
+              {["Обучение ИИ", "Digital Marketing", "LMS под ваш бренд", "Вайб-кодинг"].map(
                 (item) => (
                   <div
                     key={item}
@@ -195,15 +196,21 @@ export function Team() {
         <SectionHeader
           label="Экспертиза"
           title="Преподаватели и менторы"
-          description="Экспертный состав iStep — практикующие IT-специалисты с международными и национальными сертификатами, многолетним отраслевым опытом. Корпоративные тренеры, которые адаптируют сложные технологии под задачи бизнеса и обучают на реальных кейсах."
+          description="Экспертный состав iStep — практикующие IT-специалисты с международными и национальными сертификатами, многолетним отраслевым опытом. Корпоративные тренеры, которые адаптируют сложные технологии под задачи бизнеса и обучают на реальных кейсах, с объяснениями на доступном языке."
           className="!mb-5 lg:!mb-6"
         />
 
-        <div className="mb-6 rounded-2xl border border-brand-teal/20 bg-brand-teal-light/40 px-6 py-4 text-center sm:px-8">
-          <p className="text-xl font-bold text-brand-navy sm:text-2xl">~270</p>
-          <p className="mt-1 text-sm text-brand-muted">
-            сотрудников корпоративного сектора уже прошли обучение у нашей команды
-          </p>
+        <div className="mb-6 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-brand-teal/20 bg-brand-teal-light/40 px-6 py-4 text-center sm:px-8">
+            <p className="text-xl font-bold text-brand-navy sm:text-2xl">&gt; 270</p>
+            <p className="mt-1 text-sm text-brand-muted">
+              сотрудников корпоративного сектора прошли обучение у нашей команды
+            </p>
+          </div>
+          <div className="rounded-2xl border border-brand-blue/15 bg-brand-blue-light/40 px-6 py-4 text-center sm:px-8">
+            <p className="text-xl font-bold text-brand-navy sm:text-2xl">&gt; 1 000</p>
+            <p className="mt-1 text-sm text-brand-muted">частных слушателей программ iStep</p>
+          </div>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-3 lg:gap-6">
