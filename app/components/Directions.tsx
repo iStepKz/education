@@ -55,7 +55,7 @@ const services: Service[] = [
     ],
     footnote:
       "Состав уроков и срок доступа фиксируем в предложении. Лицензии ИИ-сервисов и домен — отдельно.",
-    icon: "MKT",
+    icon: "Digital Marketing",
     color: "bg-brand-blue-light text-brand-blue",
   },
   {
@@ -101,7 +101,11 @@ export function Directions() {
 
               <div className="relative mb-3 flex items-start justify-between gap-3">
                 <div
-                  className={`inline-flex h-10 min-w-10 items-center justify-center rounded-xl px-2 text-[10px] font-bold sm:text-xs ${item.color}`}
+                  className={`inline-flex items-center justify-center rounded-xl px-2 font-bold ${item.color} ${
+                    item.number === "02"
+                      ? "min-h-10 max-w-[6rem] py-1.5 text-[8px] leading-snug text-center sm:text-[9px]"
+                      : "h-10 min-w-10 text-[10px] sm:text-xs"
+                  }`}
                 >
                   {item.icon}
                 </div>
