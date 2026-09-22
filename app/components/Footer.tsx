@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 import { Container } from "./ui/Container";
 
 const socialLinks = [
@@ -53,8 +54,17 @@ export function Footer() {
               height={128}
               className="h-28 w-auto rounded-xl bg-white px-4 py-3 lg:h-32"
             />
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-400">
+            <p className="mt-4 text-sm font-semibold text-white">ТОО «iStep»</p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-400">
               Корпоративное и индивидуальное обучение искусственному интеллекту и вайб-кодингу.
+            </p>
+            <p className="mt-3 text-sm">
+              <a
+                href={SITE_URL}
+                className="font-medium text-brand-teal transition-colors hover:text-white"
+              >
+                istep.kz
+              </a>
             </p>
           </div>
 
@@ -100,7 +110,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} iStep. Все права защищены.
+            &copy; {new Date().getFullYear()} ТОО «iStep». Все права защищены.
           </p>
           <div className="flex gap-6 text-sm text-slate-500">
             <Link href="#" className="transition-colors hover:text-white">

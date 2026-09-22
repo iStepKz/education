@@ -16,8 +16,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Курсы ИИ для бизнеса в Астане — iStep",
+    default: "iStep — обучение ИИ и вайб-кодингу для бизнеса в Астане",
     template: `%s — ${siteName}`,
+  },
+  icons: {
+    icon: [{ url: "/images/logo.png", type: "image/png" }],
+    apple: [{ url: "/images/logo.png", type: "image/png" }],
   },
   description:
     "Обучение искусственному интеллекту и вайб-кодингу для сотрудников и руководителей. Корпоративные программы в Астане и онлайн по Казахстану.",

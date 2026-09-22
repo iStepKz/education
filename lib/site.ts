@@ -1,5 +1,5 @@
-/** Canonical site URL (Vercel primary: www redirects from apex). */
-export const SITE_URL = "https://www.istep.kz";
+/** Canonical site URL (Vercel primary domain). */
+export const SITE_URL = "https://istep.kz";
 
 export const siteName = "iStep";
 

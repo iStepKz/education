@@ -14,7 +14,11 @@ import {
   courseProgram,
   courseTasks,
 } from "@/lib/course-ai-content";
-import { SITE_URL, siteName } from "@/lib/site";
+import {
+  getOrganizationJsonLd,
+  getOrganizationProviderReference,
+} from "@/lib/organization-schema";
+import { SITE_URL } from "@/lib/site";
 
 const pagePath = "/ai-vibe-coding-astana";
 const pageUrl = `${SITE_URL}${pagePath}`;
@@ -42,23 +46,11 @@ const courseJsonLd = {
   name: "Обучение ИИ и вайб-кодингу для бизнеса в Астане",
   description:
     "Корпоративный практический курс по генеративному ИИ и вайб-кодингу для сотрудников и руководителей. Очно в Астане и онлайн по Казахстану.",
-  provider: {
-    "@type": "Organization",
-    name: siteName,
-    url: SITE_URL,
-    email: "info@istep.kz",
-    telephone: "+7-701-807-97-71",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Астана",
-      streetAddress: "ул. Мухамедханова, 6",
-      addressCountry: "KZ",
-    },
-  },
+  provider: getOrganizationProviderReference(),
   hasCourseInstance: {
     "@type": "CourseInstance",
     courseMode: ["onsite", "online"],
-    courseWorkload: "PT5H",
+    courseWorkload: "PT6H",
     location: {
       "@type": "Place",
       name: "Астана, Казахстан",
@@ -68,25 +60,16 @@ const courseJsonLd = {
     "@type": "Offer",
     price: "157500",
     priceCurrency: "KZT",
-    description: "от 157 500 ₸ за одного сотрудника (курс 5 часов)",
+    description: "от 157 500 ₸ за одного сотрудника (курс 6 часов)",
     url: pageUrl,
   },
-};
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: siteName,
-  url: SITE_URL,
-  email: "info@istep.kz",
-  telephone: "+7-701-807-97-71",
 };
 
 export default function AiVibeCodingAstanaPage() {
   return (
     <>
+      <JsonLd data={getOrganizationJsonLd()} />
       <JsonLd data={courseJsonLd} />
-      <JsonLd data={organizationJsonLd} />
       <Header />
       <main>
         <section className="bg-gradient-to-b from-brand-blue-light/40 to-white pt-28 pb-12 sm:pt-32 sm:pb-16">
@@ -164,7 +147,7 @@ export default function AiVibeCodingAstanaPage() {
           <Container>
             <SectionHeader
               title="Программа обучения"
-              description="Корпоративный курс · 5 часов. Содержание адаптируем под отрасль и уровень участников."
+              description="Корпоративный курс · 6 часов. Содержание адаптируем под отрасль и уровень участников."
               align="left"
               className="!mb-8"
             />
@@ -219,7 +202,7 @@ export default function AiVibeCodingAstanaPage() {
             />
             <div className="max-w-3xl space-y-4 text-brand-muted">
               <p className="leading-relaxed">
-                <strong className="text-brand-navy">Длительность:</strong> 5 часов — базовая
+                <strong className="text-brand-navy">Длительность:</strong> 6 часов — базовая
                 корпоративная программа по ИИ и вайб-кодингу.
               </p>
               <p className="leading-relaxed">
