@@ -104,12 +104,12 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 text-lg leading-relaxed text-brand-muted sm:text-xl">
-              Обучение ИИ и тренинги по вайб-кодингу для сотрудников и руководителей.
-              Корпоративные программы обучения в Астане и онлайн по Казахстану.
+              Корпоративное обучение искусственному интеллекту и вайб-кодингу для команд и
+              руководителей — очно в Астане и онлайн по Казахстану.
             </p>
 
             <div className="mt-10">
-              <Button href="#courses" variant="outline">
+              <Button href="/#courses" variant="outline">
                 Наши услуги
               </Button>
             </div>

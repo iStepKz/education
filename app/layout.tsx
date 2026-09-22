@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SITE_URL, siteName } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Курсы ИИ для бизнеса в Астане — iStep",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Курсы ИИ для бизнеса в Астане — iStep",
+    template: `%s — ${siteName}`,
+  },
   description:
-    "Обучение искусственному интеллекту, вайб-кодингу для сотрудников и руководителей. Корпоративные программы обучения в Астане и онлайн по Казахстану.",
+    "Обучение искусственному интеллекту и вайб-кодингу для сотрудников и руководителей. Корпоративные программы в Астане и онлайн по Казахстану.",
+  openGraph: {
+    type: "website",
+    locale: "ru_KZ",
+    siteName,
+    images: [{ url: "/images/logo.png", alt: "iStep" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

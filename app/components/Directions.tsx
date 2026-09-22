@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "./ui/Container";
 import { SectionHeader } from "./ui/SectionHeader";
 
@@ -134,6 +135,17 @@ export function Directions() {
               {item.footnote && (
                 <p className="relative mt-3 text-[11px] leading-snug text-brand-muted/90 sm:text-xs">
                   {item.footnote}
+                </p>
+              )}
+
+              {item.number === "01" && (
+                <p className="relative mt-4 border-t border-slate-100 pt-4">
+                  <Link
+                    href="/ai-vibe-coding-astana"
+                    className="text-sm font-semibold text-brand-blue transition-colors hover:text-brand-teal"
+                  >
+                    Подробнее: обучение ИИ и вайб-кодингу в Астане →
+                  </Link>
                 </p>
               )}
             </article>

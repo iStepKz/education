@@ -7,12 +7,12 @@ import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
 
 const navLinks = [
-  { label: "Главная", href: "#home" },
-  { label: "О нас", href: "#about" },
-  { label: "Услуги", href: "#courses" },
-  { label: "Корпоративное обучение", href: "#corporate" },
-  { label: "Преподаватели и менторы", href: "#team" },
-  { label: "Контакты", href: "#contact" },
+  { label: "Главная", href: "/#home" },
+  { label: "О нас", href: "/#about" },
+  { label: "Услуги", href: "/#courses" },
+  { label: "Корпоративное обучение", href: "/#corporate" },
+  { label: "Преподаватели и менторы", href: "/#team" },
+  { label: "Контакты", href: "/#contact" },
 ];
 
 export function Header() {
@@ -44,7 +44,7 @@ export function Header() {
       <Container>
         <div className="flex items-end justify-between pt-1 pb-6 lg:pt-1.5 lg:pb-7">
           <Link
-            href="#home"
+            href="/#home"
             className="relative z-10 inline-flex h-12 shrink-0 translate-y-1.5 items-center justify-center rounded-lg bg-white px-2 py-0.5 shadow-sm ring-1 ring-slate-100 sm:translate-y-2 sm:h-14 lg:h-16"
             onClick={() => setIsOpen(false)}
           >
@@ -71,7 +71,7 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Button href="#contact" variant="primary" className="px-3 py-1.5 text-xs">
+            <Button href="/#contact" variant="primary" className="px-3 py-1.5 text-xs">
               Записаться
             </Button>
           </div>
@@ -124,7 +124,7 @@ export function Header() {
             ))}
           </nav>
           <div className="mt-8">
-            <Button href="#contact" variant="primary" className="w-full">
+            <Button href="/#contact" variant="primary" className="w-full">
               Записаться
             </Button>
           </div>

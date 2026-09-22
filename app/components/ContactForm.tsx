@@ -5,7 +5,12 @@ import { Button } from "./ui/Button";
 import { Container } from "./ui/Container";
 import { SectionHeader } from "./ui/SectionHeader";
 
-export function ContactForm() {
+type ContactFormProps = {
+  sectionId?: string;
+  formspreeSubject?: string;
+};
+
+export function ContactForm({ sectionId = "contact", formspreeSubject }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -31,7 +36,7 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-20 lg:py-28">
+    <section id={sectionId} className="scroll-mt-32 py-20 lg:py-28">
       <Container>
         <div className="overflow-hidden rounded-[2rem] border border-slate-100 bg-white shadow-xl shadow-brand-blue/5">
           <div className="grid lg:grid-cols-2">
@@ -77,6 +82,9 @@ export function ContactForm() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {formspreeSubject && (
+                    <input type="hidden" name="_subject" value={formspreeSubject} />
+                  )}
                   <div>
                     <label htmlFor="name" className="mb-2 block text-sm font-medium text-brand-navy">
                       Имя
