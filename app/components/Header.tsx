@@ -42,10 +42,10 @@ export function Header() {
       }`}
     >
       <Container>
-        <div className="flex h-14 items-center justify-between sm:h-16 lg:h-[4.25rem]">
+        <div className="flex h-16 items-center justify-between sm:h-[4.5rem]">
           <Link
             href="/#home"
-            className="relative z-10 inline-flex h-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white px-2 shadow-sm ring-1 ring-slate-100 sm:h-11 sm:px-2.5"
+            className="relative z-10 inline-flex h-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white px-2.5 shadow-sm ring-1 ring-slate-100 sm:h-14 sm:px-3"
             onClick={() => setIsOpen(false)}
           >
             <Image
@@ -53,7 +53,7 @@ export function Header() {
               alt="iStep"
               width={400}
               height={160}
-              className="h-8 w-auto max-h-full object-contain sm:h-9"
+              className="h-10 w-auto max-h-full object-contain sm:h-12"
               priority
             />
           </Link>
