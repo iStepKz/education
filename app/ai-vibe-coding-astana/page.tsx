@@ -60,7 +60,8 @@ const courseJsonLd = {
     "@type": "Offer",
     price: "157500",
     priceCurrency: "KZT",
-    description: "от 157 500 ₸ за одного сотрудника (курс 6 часов)",
+    description:
+      "от 157 500 ₸ за одного сотрудника (курс 6 часов); цена со скидкой при группе от 7 человек",
     url: pageUrl,
   },
 };
@@ -210,11 +211,14 @@ export default function AiVibeCodingAstanaPage() {
                 онлайн или гибрид для команд в других городах Казахстана. Расписание и состав
                 группы согласуем с заказчиком.
               </p>
-              <p className="leading-relaxed">
-                <strong className="text-brand-navy">Стоимость:</strong> от 157 500 ₸ за одного
-                сотрудника (уточняется в коммерческом предложении). На главной странице также
-                представлены другие услуги iStep — маркетинг и LMS.
-              </p>
+              <div className="rounded-2xl border border-slate-100 bg-slate-50/80 p-5">
+                <p className="text-lg font-bold text-brand-navy">от 157 500 ₸</p>
+                <p className="mt-1 text-sm text-brand-muted">за 1 сотрудника / курс 6 часов</p>
+                <p className="mt-4 text-sm leading-relaxed text-brand-muted">
+                  Формат и расписание согласуем. Для практики — материалы, разрешённые заказчиком.
+                  Цена со скидкой при группе от 7 человек.
+                </p>
+              </div>
             </div>
           </Container>
         </section>
