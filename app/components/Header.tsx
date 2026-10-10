@@ -42,7 +42,7 @@ export function Header() {
       }`}
     >
       <Container>
-        <div className="flex h-16 items-center justify-between sm:h-[4.5rem]">
+        <div className="flex h-16 items-center gap-3 sm:h-[4.5rem]">
           <Link
             href="/#home"
             className="relative z-10 inline-flex h-12 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white px-2.5 shadow-sm ring-1 ring-slate-100 sm:h-14 sm:px-3"
@@ -58,31 +58,31 @@ export function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-1 xl:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-full px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-brand-navy"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="ml-auto flex items-center gap-2 sm:gap-3">
+            <nav className="hidden items-center gap-1 xl:flex">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-full px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-brand-navy"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button href="/#contact" variant="primary" className="px-3 py-1.5 text-xs">
-              Записаться
-            </Button>
-          </div>
-
-          <button
-            type="button"
-            aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
-            aria-expanded={isOpen}
-            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-navy transition-colors hover:bg-slate-50 lg:hidden"
-            onClick={() => setIsOpen((prev) => !prev)}
-          >
+            <div className="hidden lg:block">
+              <Button href="/#contact" variant="primary" className="px-3 py-1.5 text-xs">
+                Записаться
+              </Button>
+            </div>
+            <button
+              type="button"
+              aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
+              aria-expanded={isOpen}
+              className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-navy transition-colors hover:bg-slate-50 lg:hidden"
+              onClick={() => setIsOpen((prev) => !prev)}
+            >
             <span className="sr-only">Меню</span>
             <div className="flex w-5 flex-col gap-1.5">
               <span
@@ -102,6 +102,7 @@ export function Header() {
               />
             </div>
           </button>
+          </div>
         </div>
       </Container>
 

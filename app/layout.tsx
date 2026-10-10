@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { WhatsAppFloat } from "./components/WhatsAppLink";
 import { SITE_URL, siteName } from "@/lib/site";
 import "./globals.css";
 
@@ -48,7 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}>
-      <body className="min-h-screen bg-white font-sans text-brand-navy">{children}</body>
+      <body className="min-h-screen bg-white font-sans text-brand-navy">
+        {children}
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }
